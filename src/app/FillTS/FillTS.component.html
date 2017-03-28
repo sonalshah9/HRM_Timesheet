@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<header role="banner" id="title-bar2" style = "background: none repeat scroll 0 0 #3E506A;overflow: hidden;">
+  <div style="text-align: center;padding:5px 5px 5px 5px;font-weight: bold; font-size: 23px  ;color: #fff;">Fill Timesheet</div>
+</header>
+<div>
+  <p>
+  <p>
+    <span id="EmployeeNameLabel" style="display:inline-block;font-size:12px;font-weight:bold;width:180px;">Employees:
+    </span>
+    <select name="Employee" id="Employee" class="selectdrop" style="width:300px;">
+      <option selected="selected">Your FirstName Your LastName</option>
+    </select>
+  </p>
+  <span id="Label2" style="display:inline-block;font-size:12px;font-weight:bold;width:180px;">Current Timesheet Period:</span>
+  <p id="CurrentDate" style = "font-size:15px;font-weight:bold;display: inline-block ">{{fromDate | date}}  -  {{toDate | date}}</p>
+
+  <p>
+    <span id="Label3" class="statuslabel" style="display:inline-block;font-size:12px;font-weight:bold;width:180px;">Timesheet Status:</span>
+    <img id="TSL" class="statuslabel" src="/images/NotSubmittedStatus.gif" alt="Timesheet Status" style="width:12px;border-width:0px;">
+    <span id="TimesheetStatus" class="statuslabel" style="display:inline-block;font-size:15px;font-weight:bold;width:150px;">Not Submitted</span>
+  </p>
+  <p>
+  </p>
+</div>
+<p></p>
+<div>
+  <table class="xGridViewTS" cellspacing="0" rules="all"
+         enableinsert="True" insertrowcount="1" savebuttonid=""
+         border="1" id="xGridviewTS" style="width:100%;border-collapse:collapse;">
+    <caption>
+      Time Entry Week View
+    </caption>
+    <tbody>
+    <tr style="height:25px;">
+      <th scope="col"><span id="Project"><br>Project Name<br></span></th>
+      <th scope="col"><span id="ProjectTask"><br>Project Task<br></span></th>
+      <th scope="col"><span id="Mon"><br>Mon<br></span></th>
+      <th scope="col"><span id="Tue"><br>Tue<br></span></th>
+      <th scope="col"><span id="Wed"><br>Wed<br></span></th>
+      <th scope="col"><span id="Thu"><br>Thu<br></span></th>
+      <th scope="col"><span id="Fri"><br>Fri<br></span></th>
+      <th scope="col"><span id="Sat"><br>Sat<br></span></th>
+      <th scope="col"><span id="Sun"><br>Sun<br></span></th>
+      <th scope="col"><span id="ProjectDescription"><br>Description<br></span></th>
+    </tr>
+    <tr>
+      <td align="center" valign="middle" style="width:400px;">
+        <select name="SelectProject1" id="SelectProject1" class="selectdrop" style="width:100%;">
+          <option value="Project1">Project1</option>
+          <option value="Project2">Project2</option>
+        </select><br>
+      </td>
+      <td align="center" valign="middle" style="width:400px;">
+        <select name="SelectTask1" id="SelectTask1" class="selectdrop" style="width:100%;">
+          <option value="Task1">Task1</option><option value="Task2">Task2</option><option value="Task3">Task3</option><option value="Task4">Task4</option>
+        </select><br>
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_1_0" type="text" id="TT_1_0" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_1_1" type="text" id="TT_1_1" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_1_2" type="text" id="TT_1_2" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_1_3" type="text" id="TT_1_3" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_1_4" type="text" id="TT_1_4" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_1_5" type="text" id="TT_1_5" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_1_6" type="text" id="TT_1_6" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_1_D" type="text" id="TT_1_D" class="textboxnew" style="width:180px;text-align:center;">
+      </td>
+    <tr>
+      <td align="center" valign="middle" style="width:400px;">
+        <select name="SelectProject2" id="SelectProject2" class="selectdrop" style="width:100%;">
+          <option value="Project1">Project1</option><option value="Project2">Project2</option>
+        </select><br>
+      </td>
+      <td align="center" valign="middle" style="width:400px;">
+        <select name="SelectTask2" id="SelectTask2" class="selectdrop" style="width:100%;">
+          <option value="Task1">Task1</option><option value="Task2">Task2</option><option value="Task3">Task3</option><option value="Task4">Task4</option>
+        </select><br>
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_2_0" type="text" id="TT_2_0" class="textboxnew" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_2_1" type="text" id="TT_2_1" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_2_2" type="text" id="TT_2_2" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_2_3" type="text" id="TT_2_3" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_2_4" type="text" id="TT_2_4" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_2_5" type="text" id="TT_2_5" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_2_6" type="text" id="TT_2_6" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TT_2_D" type="text" id="TT_2_D" class="textboxnew" style="width:180px;text-align:center;">
+      </td>
+    <tr>
+      <td align="left" valign="middle" style="width:400px;">
+        <span id="TimeOff_1" style="display:inline-block;font-weight:bold;width:50%;">Time Off</span><br>
+      </td>
+      <td align="center" valign="middle" style="width:400px;">
+        <select name="TimeOffTypeId_1" id="TimeOffTypeId" class="selectdrop" width="100%" style="width:100%;">
+          <option value="LeaveOfAbsence">Leave</option><option value="CompanyHoliday">Company Holiday</option>
+        </select><br>
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_1_0" type="text" id="TO_1_0" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_1_1" type="text" id="TO_1_1" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_1_2" type="text" id="TO_1_2" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_1_3" type="text" id="TO_1_3" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_1_4" type="text" id="TO_1_4" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_1_5" type="text" id="TO_1_5" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_1_6" type="text" id="TO_1_6" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_1_D" type="text" id="TO_1_D" class="textboxnew" style="width:180px;text-align:center;">
+      </td>
+    <tr>
+      <td align="left" valign="middle" style="width:400px;">
+        <span id="TimeOff_2" style="display:inline-block;font-weight:bold;width:50%;">Time Off</span><br>
+      </td>
+      <td align="center" valign="middle" style="width:400px;">
+        <select name="TimeOffTypeId_2" id="TimeOffTypeId2" class="selectdrop" width="100%" style="width:100%;">
+          <option value="LeaveOfAbsence">Leave</option><option value="CompanyHoliday">Company Holiday</option>
+        </select><br>
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_2_0" type="text" id="TO_2_0" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_2_1" type="text" id="TO_2_1" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_2_2" type="text" id="TO_2_2" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_2_3" type="text" id="TO_2_3" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_2_4" type="text" id="TO_2_4" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_2_5" type="text" id="TO_2_5" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_2_6" type="text" id="TO_2_6" class="textboxnew" onchange = "updateSum()" style="width:50px;text-align:center;">
+      </td>
+      <td align="center" style="width:50px;">
+        <input name="TO_2_D" type="text" id="TO_2_D" class="textboxnew" style="width:180px;text-align:center;">
+      </td>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td align="center">
+        <input name="Tst_0" type="text" readonly="readonly" id="Tst_0" class="textboxnew" style="width:50px;text-align:center;">
+      </td>
+      <td align="center">
+        <input name="Tst_1" type="text" readonly="readonly" id="Tst_1" class="textboxnew" style="width:50px;text-align:center;">
+      </td>
+      <td align="center">
+        <input name="Tst_2" type="text" readonly="readonly" id="Tst_2" class="textboxnew" style="width:50px;text-align:center;">
+      </td>
+      <td align="center">
+        <input name="Tst_3" type="text" readonly="readonly" id="Tst_3" class="textboxnew" style="width:50px;text-align:center;">
+      </td>
+      <td align="center">
+        <input name="Tst_4" type="text" readonly="readonly" id="Tst_4" class="textboxnew" style="width:50px;text-align:center;">
+      </td>
+      <td align="center">
+        <input name="Tst_5" type="text" readonly="readonly" id="Tst_5" class="textboxnew" style="width:50px;text-align:center;">
+      </td>
+      <td align="center">
+        <input name="Tst_6" type="text" readonly="readonly" id="Tst_6" class="textboxnew" style="width:50px;text-align:center;">
+      </td>
+      <td align="center">
+        <input name="Tst_D" type="text" readonly="readonly" id="Tst_D" class="textboxnew" style="width:180px;text-align:center;">
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <span id="description" style="display:inline-block;font-weight:bold;width:150px;">Description:</span>
+</p>
+<p>
+  <textarea name="PeriodDescription" rows="2" cols="20" id="PeriodDescription" class="textboxnew" style="height:75px;width:35%;"></textarea>
+</p>
+<p></p>
+<table class="xStatusLegend"><tbody><tr style="height:2.5px"><td>
+  <table width="100%" class="xStatusLegend">
+    <tbody>
+    <tr>
+      <th class="FormViewSubHeader" colspan="11">
+        Status Legend
+      </th>
+      <td valign="bottom">&nbsp;&nbsp;</td>
+
+      <td valign="bottom" style="margin-right: 6px">
+        <img id="NotSubmitted" src="images/NotSubmittedStatus.gif" style="width:10px;border-width:0px;"></td>
+      <td style="font-weight: bold; width: 72px">Not Submitted</td>
+
+      <td valign="bottom" style="margin-right: 6px">
+        <img id="Submitted" src="images/SubmittedStatus.gif" style="width:10px;border-width:0px;"></td>
+      <td style="font-weight: bold; width: 72px">Submitted</td>
+
+      <td valign="bottom">
+        <img id="Approved" src="images/ApprovedStatus.gif" style="width:10px;border-width:0px;"></td>
+      <td style="font-weight: bold; width: 72px">Approved</td>
+
+      <td valign="bottom">
+        <img id="Rejected" src="images/RejectedStatus.gif" style="width:10px;border-width:0px;"></td>
+      <td style="font-weight: bold; width: 72px">Rejected</td>
+    </tr>
+    </tbody></table>
+</td></tr></tbody></table>
+<br><br>
+<input type="submit" name="SaveButton1" value="Save" id="Savebutton1" style="width:104px;background-color:#3E506A;font-weight:bold;color:#fff">
+<input type="submit" name="SubmitButton1" value="Submit" id="Submitbutton1" style="width:104px;background-color:#3E506A;font-weight:bold;color:#fff">
+</body>
+</html>

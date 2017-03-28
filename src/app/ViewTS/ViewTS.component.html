@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<header role="banner" id="title-bar2" style = "background: none repeat scroll 0 0 #3E506A;overflow: hidden;">
+  <div style="text-align: center;padding:5px 5px 5px 5px;font-weight: bold; font-size: 23px  ;color: #fff;">View Timesheet</div>
+</header>
+<div>
+  <p>
+  <p>
+    <span id="EmployeeNameLabel" style="display:inline-block;font-size:12px;font-weight:bold;width:180px;">Employees:
+    </span>
+    <select name="Employee" id="Employee" class="selectdrop" style="width:300px;">
+      <option selected="selected">Your FirstName Your LastName</option>
+    </select>
+  </p>
+  <span id="Label2" style="display:inline-block;font-size:12px;font-weight:bold;width:180px;">Current Timesheet Period:</span>
+  <p id="CurrentDate" style = "font-size:15px;font-weight:bold;display: inline-block ">{{fromDate | date}}  -  {{toDate | date}}</p>
+
+  <p>
+    <span id="Label3" class="statuslabel" style="display:inline-block;font-size:12px;font-weight:bold;width:180px;">Timesheet Status:</span>
+    <img id="TSL" class="statuslabel" src="/images/NotSubmittedStatus.gif" alt="Timesheet Status" style="width:12px;border-width:0px;">
+    <span id="TimesheetStatus" class="statuslabel" style="display:inline-block;font-size:15px;font-weight:bold;width:150px;">Not Submitted</span>
+  </p>
+  <p>
+  </p>
+</div>
+<p></p>
+<div>
+  <table class="xGridViewTS" cellspacing="0" rules="all"
+         enableinsert="True" insertrowcount="1" savebuttonid=""
+         border="1" id="xGridviewTS" style="width:100%;border-collapse:collapse;">
+    <caption>
+      Time Entry Week View
+    </caption>
+    <tbody>
+    <tr style="height:25px;">
+      <th scope="col"><span id="Project"><br>Project Name<br></span></th>
+      <th scope="col"><span id="ProjectTask"><br>Project Task<br></span></th>
+      <th scope="col"><span id="Mon"><br>Mon<br></span></th>
+      <th scope="col"><span id="Tue"><br>Tue<br></span></th>
+      <th scope="col"><span id="Wed"><br>Wed<br></span></th>
+      <th scope="col"><span id="Thu"><br>Thu<br></span></th>
+      <th scope="col"><span id="Fri"><br>Fri<br></span></th>
+      <th scope="col"><span id="Sat"><br>Sat<br></span></th>
+      <th scope="col"><span id="Sun"><br>Sun<br></span></th>
+      <th scope="col"><span id="ProjectDescription"><br>Description<br></span></th>
+    </tr>
+    <tr>
+      <td align="left" valign="middle" style="width:400px;">Project1</td>
+      <td align="left" valign="middle" style="width:400px;">Task1</td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+    <tr>
+      <td align="left" valign="middle" style="width:400px;">Project1</td>
+      <td align="left" valign="middle" style="width:400px;">Task1</td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+    <tr>
+      <td align="left" valign="middle" style="width:400px;">
+        <span id="TimeOff_1" style="display:inline-block;font-weight:bold;width:50%;">Time Off</span><br>
+      </td>
+      <td align="left" valign="middle" style="width:400px;">Leave</td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+    <tr>
+      <td align="left" valign="middle" style="width:400px;">
+        <span id="TimeOff_2" style="display:inline-block;font-weight:bold;width:50%;">Time Off</span><br>
+      </td>
+      <td align="left" valign="middle" style="width:400px;">Company Holiday</td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+      <td align="center" style="width:50px;"></td>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <span id="description" style="display:inline-block;font-weight:bold;width:150px;">Description:</span>
+</p>
+<p>
+  <textarea name="PeriodDescription" rows="2" cols="20" id="PeriodDescription" class="textboxnew" style="height:75px;width:35%;"></textarea>
+</p>
+<p></p>
+<table class="xStatusLegend"><tbody><tr style="height:2.5px"><td>
+  <table width="100%" class="xStatusLegend">
+    <tbody>
+    <tr>
+      <th class="FormViewSubHeader" colspan="11">
+        Status Legend
+      </th>
+      <td valign="bottom">&nbsp;&nbsp;</td>
+
+      <td valign="bottom" style="margin-right: 6px">
+        <img id="NotSubmitted" src="images/NotSubmittedStatus.gif" style="width:10px;border-width:0px;"></td>
+      <td style="font-weight: bold; width: 72px">Not Submitted</td>
+
+      <td valign="bottom" style="margin-right: 6px">
+        <img id="Submitted" src="images/SubmittedStatus.gif" style="width:10px;border-width:0px;"></td>
+      <td style="font-weight: bold; width: 72px">Submitted</td>
+
+      <td valign="bottom">
+        <img id="Approved" src="images/ApprovedStatus.gif" style="width:10px;border-width:0px;"></td>
+      <td style="font-weight: bold; width: 72px">Approved</td>
+
+      <td valign="bottom">
+        <img id="Rejected" src="images/RejectedStatus.gif" style="width:10px;border-width:0px;"></td>
+      <td style="font-weight: bold; width: 72px">Rejected</td>
+    </tr>
+    </tbody></table>
+</td></tr></tbody></table>
+<br><br>
+<input type="submit" name="BackButton1" value="Back" id="BackButton1" style="width:104px;background-color:#3E506A;font-weight:bold;color:#fff">
+</body>
+</html>

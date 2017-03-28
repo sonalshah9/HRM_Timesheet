@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<header role="banner" id="title-bar2" style = "background: none repeat scroll 0 0 #3E506A;overflow: hidden;">
+  <div style="text-align: center;padding:5px 5px 5px 5px;font-weight: bold; font-size: 23px  ;color: #fff;">
+    Welcome to Timesheet Portal</div>
+</header>
+<br><br>
+<div align="center">
+  <a routerLink="/ViewTimesheet" routerLinkActive="active">
+    <input type="submit" name="ViewTimesheet" value="ViewTimesheet" id="ViewTimesheet"
+           style="height:auto;width:207px;background-color:#3E506A;font-weight:bold;color:#fff"></a>
+
+  <a routerLink="/FillTimesheet" routerLinkActive="active">
+    <input type="submit" name="FillTimesheet" value="FillTimesheet" id="FillTimesheet"
+           style="height:auto;background-color:#3E506A;font-weight:bold;color:#fff;width: 207px"></a>
+  <br><br>
+
+</div>
+<router-outlet></router-outlet>
+</body>
+</html>
